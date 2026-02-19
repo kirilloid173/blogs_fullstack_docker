@@ -1,0 +1,19 @@
+@font-face {
+    font-family: "Inter";
+    src: url("/fonts/Inter_18pt-Regular.ttf") format("ttf");
+    font-style: normal;
+    font-display: swap;
+}
+
+* {
+    font-family: "Inter", Arial, Helvetica, sans-serif;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+div {
+    width: 750px;
+}

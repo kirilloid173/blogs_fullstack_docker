@@ -1,0 +1,33 @@
+services:
+    mysqlDB:
+        image: mysql:9
+        restart: always
+        container_name: mysql_service
+        environment:
+            - MYSQL_ROOT_PASSWORD=${MYSQL_ROOT_PASSWORD}
+            - MYSQL_PASSWORD=${MYSQL_PASSWORD}
+            - MYSQL_USER=${MYSQL_USER}
+        healthcheck:
+            test:
+                [
+                    'CMD-SHELL',
+                    'mysqladmin ping -h 127.0.0.1 -u root -p${MYSQL_ROOT_PASSWORD} --silent',
+                ]
+            interval: 5s
+            timeout: 5s
+            retries: 10
+            start_period: 10s
+    nginx_frontend:
+        image: nginx
+        restart: always
+        container_name: nginx_service
+        volumes:
+            - ./build_frontend:/usr/share/nginx/html:ro # build Vite
+            - ./nginx_conf/conf.d/default.conf:/etc/nginx/conf.d/default.conf # proxy for nginx
+        ports:
+            - '80:80'
+            - '443:443'
+        depends_on:
+            - node
+volumes:
+    mysqldb_data:
