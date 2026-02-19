@@ -4,7 +4,7 @@
 (git clone https://github.com/kirilloid173/blogs_fullstack_docker.git)
 Переходим к папке проекта
 
-Создаём .env файл
+Создаём .env файл в корне проекта
 
 Внутри .env файла прописываем значения записанные в .env.example, с записью переменных записанных в ней
 
