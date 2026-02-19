@@ -42,3 +42,9 @@
 Все статьи/блоги - /articles/
 
 Определённая статья - /articles/{id}
+
+Backend API Laravel часть проекта - https://github.com/kirilloid173/blog_fullstack_laravel
+
+React SPA Frontend часть проекта - https://github.com/kirilloid173/blogs_fullstack_react
+
+Потраченное время на выполнение проекта: ~~ 5-6 часов
